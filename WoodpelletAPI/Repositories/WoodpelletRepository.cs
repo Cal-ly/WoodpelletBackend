@@ -2,10 +2,21 @@
 
 namespace WoodpelletAPI.Repositories;
 
+/// <summary>
+/// Repository for managing woodpellet data.
+/// </summary>
 public class WoodpelletRepository
 {
     private readonly List<Woodpellet> _woodpellets = [];
+
+    /// <summary>
+    /// Gets the next available Id for a new woodpellet.
+    /// </summary>
     public int NextId => FindNextId();
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="WoodpelletRepository"/> class.
+    /// </summary>
     public WoodpelletRepository()
     {
         _woodpellets.Add(new Woodpellet { Id = 1, Brand = "EcoPellet", Price = 200.0, Quality = QualityEnum.Medium });
@@ -17,19 +28,30 @@ public class WoodpelletRepository
         _woodpellets.Add(new Woodpellet { Id = 6, Brand = "ChernobylFire", Price = 190.0, Quality = QualityEnum.BasicallyNapalm });
     }
 
-    // Retrieve all Woodpellets
+    /// <summary>
+    /// Retrieves all woodpellets.
+    /// </summary>
+    /// <returns>A list of all woodpellets.</returns>
     public List<Woodpellet> GetAll()
     {
         return new List<Woodpellet>(_woodpellets);
     }
 
-    // Retrieve a specific Woodpellet by Id
+    /// <summary>
+    /// Retrieves a specific woodpellet by Id.
+    /// </summary>
+    /// <param name="id">The Id of the woodpellet to retrieve.</param>
+    /// <returns>The woodpellet with the specified Id, or null if not found.</returns>
     public Woodpellet? GetById(int id)
     {
         return _woodpellets.FirstOrDefault(w => w.Id == id);
     }
 
-    // Add a new Woodpellet
+    /// <summary>
+    /// Adds a new woodpellet.
+    /// </summary>
+    /// <param name="woodpellet">The woodpellet to add.</param>
+    /// <exception cref="ArgumentException">Thrown when a woodpellet with the same Id already exists.</exception>
     public void Add(Woodpellet woodpellet)
     {
         if (_woodpellets.Any(w => w.Id == woodpellet.Id))
@@ -42,7 +64,11 @@ public class WoodpelletRepository
         _woodpellets.Add(woodpellet);
     }
 
-    // Update an existing Woodpellet
+    /// <summary>
+    /// Updates an existing woodpellet.
+    /// </summary>
+    /// <param name="updatedWoodpellet">The woodpellet with updated information.</param>
+    /// <exception cref="KeyNotFoundException">Thrown when the woodpellet to update is not found.</exception>
     public void Update(Woodpellet updatedWoodpellet)
     {
         var existingWoodpellet = GetById(updatedWoodpellet.Id);
@@ -59,7 +85,11 @@ public class WoodpelletRepository
         existingWoodpellet.Quality = updatedWoodpellet.Quality;
     }
 
-    // Remove a Woodpellet by Id
+    /// <summary>
+    /// Removes a woodpellet by Id.
+    /// </summary>
+    /// <param name="id">The Id of the woodpellet to remove.</param>
+    /// <exception cref="KeyNotFoundException">Thrown when the woodpellet to remove is not found.</exception>
     public void Remove(int id)
     {
         var woodpellet = GetById(id);
@@ -73,9 +103,9 @@ public class WoodpelletRepository
     }
 
     /// <summary>
-    /// Calculates the next available Id for a new wood pellet.
+    /// Calculates the next available Id for a new woodpellet.
     /// </summary>
-    /// <returns>The next available Id integer</returns>
+    /// <returns>The next available Id integer.</returns>
     private int FindNextId()
     {
         return _woodpellets.Count == 0 ? 1 : _woodpellets.Max(wp => wp.Id) + 1;
