@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodpelletAPI", "WoodpelletAPI\WoodpelletAPI.csproj", "{3AC07C59-8EF0-4D8E-A353-95B27EF3F665}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodpelletTests", "WoodpelletTests\WoodpelletTests.csproj", "{EE42B976-DDAF-4333-B18F-449A43DE4FA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AC07C59-8EF0-4D8E-A353-95B27EF3F665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC07C59-8EF0-4D8E-A353-95B27EF3F665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC07C59-8EF0-4D8E-A353-95B27EF3F665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC07C59-8EF0-4D8E-A353-95B27EF3F665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE42B976-DDAF-4333-B18F-449A43DE4FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE42B976-DDAF-4333-B18F-449A43DE4FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE42B976-DDAF-4333-B18F-449A43DE4FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE42B976-DDAF-4333-B18F-449A43DE4FA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A8EE3B5-72A8-4AD0-A9FD-50019AAF27DB}
+	EndGlobalSection
+EndGlobal
